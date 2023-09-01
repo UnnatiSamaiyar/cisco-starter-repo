@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+
+// Exhibit component to wrap child components
+function Exhibit({ children }) {
+  return (
+    <div className="Exhibit">
+      {children}
+    </div>
+  );
+}
+
+// Header component with the heading "SEXTANT"
+function Header() {
+  return (
+    <header className="App-header">
+      <h1 className="Header-title">SEXTANT</h1>
+    </header>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Exhibit>
+        <Header />
+        {/* Add other child components here */}
+      </Exhibit>
     </div>
   );
 }
 
 export default App;
+
