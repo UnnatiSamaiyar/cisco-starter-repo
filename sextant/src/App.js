@@ -1,33 +1,19 @@
+import React, { Component } from 'react';
 import './App.css';
+import Banner from './banner';
+import Exhibit from './Exhibit';
 
-// Exhibit component to wrap child components
-function Exhibit({ children }) {
-  return (
-    <div className="Exhibit">
-      {children}
-    </div>
-  );
-}
-
-// Header component with the heading "SEXTANT"
-function Header() {
-  return (
-    <header className="App-header">
-      <h1 className="Header-title">SEXTANT</h1>
-    </header>
-  );
-}
-
-function App() {
-  return (
-    <div className="App">
-      <Exhibit>
-        <Header />
-        {/* Add other child components here */}
-      </Exhibit>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <Banner bannerText="Sextant" />
+                <Exhibit name="I'm an exhibit!"></Exhibit>
+                <Exhibit name="I'm also an exhibit!"></Exhibit>
+                <Exhibit name="Don't forget about me, I'm an exhibit too!"></Exhibit>
+            </div>
+        );
+    }
 }
 
 export default App;
-
